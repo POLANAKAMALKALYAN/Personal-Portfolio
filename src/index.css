@@ -1,0 +1,120 @@
+:root {
+  
+  --color-text: #e6e6f0;
+  --color-accent: #6c5ce7;
+  --color-accent-2: #00d1ff;
+  --color-card: rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.theme-light {
+  --color-bg: #f7f9fc;
+  --color-text: #1c2237;
+  --color-accent: #7b61ff;
+  --color-accent-2: #19c8ff;
+  --color-card: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /*background: linear-gradient(150deg, #00d1ff, rgb(244, 9, 9), rgb(152, 202, 230));*/
+  background: linear-gradient(165deg, #00d1ff, rgb(152, 202, 230), #f53214,rgb(132,222,234));
+
+  color: var(--color-text);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Layout helpers */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+/* Colorful gradient decorations */
+.gradient-blob {
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(600px circle at 0% 0%, rgba(235, 208, 6, 0.35), transparent 40%),
+              radial-gradient(500px circle at 100% 20%, rgba(80, 219, 5, 0.25), transparent 35%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+.card {
+  background: var(--color-card);
+  background-color: #85b1f4;
+  border: 1px solid rgba(110, 164, 235, 0.08);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-lg);
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 6px;
+  background: rgba(108, 92, 231, 0.15);
+  color: var(--color-text);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 999px;
+  font-size: 13px;
+}
